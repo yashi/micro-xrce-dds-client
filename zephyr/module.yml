@@ -1,0 +1,4 @@
+build:
+  cmake-ext: True
+  depends:
+    - microcdr
