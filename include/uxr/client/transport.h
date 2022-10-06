@@ -28,6 +28,8 @@
 #include <uxr/client/profile/transport/ip/udp/udp_transport_freertos_plus_tcp.h>
 #elif defined(UCLIENT_PLATFORM_RTEMS_BSD_NET)
 #include <uxr/client/profile/transport/ip/udp/udp_transport_rtems_bsd_net.h>
+#elif defined(UCLIENT_PLATFORM_ZEPHYR)
+#include <uxr/client/profile/transport/ip/udp/udp_transport_zephyr.h>
 #endif // if defined(UCLIENT_EXTERNAL_UDP)
 #include <uxr/client/profile/transport/ip/udp/udp_transport.h>
 #endif //UCLIENT_PROFILE_UDP

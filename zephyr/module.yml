@@ -1,0 +1,6 @@
+name: microxrcedds_client
+build:
+  cmake: zephyr
+  kconfig: zephyr/Kconfig
+  depends:
+    - microcdr
