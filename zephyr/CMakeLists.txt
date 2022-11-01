@@ -7,20 +7,6 @@ if(CONFIG_POSIX_API)
   zephyr_library_include_directories(${ZEPHYR_BASE}/include/zephyr/posix)
 endif()
 
-zephyr_library_sources_ifdef(CONFIG_MICRO_XRCE_DDS_CLIENT_UDP
-  ${ZEPHYR_CURRENT_MODULE_DIR}/src/c/profile/transport/ip/udp/udp_transport.c
-  ${ZEPHYR_CURRENT_MODULE_DIR}/src/c/profile/transport/ip/udp/udp_transport_posix.c
-)
-
-zephyr_library_sources_ifdef(CONFIG_MICRO_XRCE_DDS_CLIENT_TCP
-  ${ZEPHYR_CURRENT_MODULE_DIR}/src/c/profile/transport/ip/tcp/tcp_transport.c
-  ${ZEPHYR_CURRENT_MODULE_DIR}/src/c/profile/transport/ip/tcp/tcp_transport_posix.c
-)
-
-zephyr_library_sources_ifdef(CONFIG_MICRO_XRCE_DDS_CLIENT_CUSTOM
-  ${ZEPHYR_CURRENT_MODULE_DIR}/src/c/profile/transport/custom/custom_transport.c
-)
-
 zephyr_library_sources(
   ${ZEPHYR_CURRENT_MODULE_DIR}/src/c/core/session/stream/input_best_effort_stream.c
   ${ZEPHYR_CURRENT_MODULE_DIR}/src/c/core/session/stream/input_reliable_stream.c
@@ -44,6 +30,7 @@ zephyr_library_sources(
   ${ZEPHYR_CURRENT_MODULE_DIR}/src/c/core/session/create_entities_bin.c
   ${ZEPHYR_CURRENT_MODULE_DIR}/src/c/core/session/read_access.c
   ${ZEPHYR_CURRENT_MODULE_DIR}/src/c/core/session/write_access.c
+  ${ZEPHYR_CURRENT_MODULE_DIR}/src/c/profile/transport/custom/custom_transport.c
 )
 
 set(PROJECT_VERSION_MAJOR 2)
